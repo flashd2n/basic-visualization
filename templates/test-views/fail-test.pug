@@ -1,0 +1,11 @@
+mixin fail(test)
+    li(class=['test', 'fail'])
+        h2
+            | #{test.fullTitle}
+            a(href='#', class='replay')
+                | ‣
+        pre(class='error')
+            | #{test.err.stack}
+        pre(style={display: 'none'})
+            code
+                | #{test.err.message}

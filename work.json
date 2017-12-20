@@ -1,0 +1,79 @@
+{
+    "stats": {
+      "suites": 1,
+      "tests": 3,
+      "passes": 42,
+      "pending": 1,
+      "failures": 22,
+      "start": "2017-12-18T23:00:05.267Z",
+      "end": "2017-12-18T23:00:05.282Z",
+      "duration": 15
+    },
+    "tests": [
+      {
+        "title": "some test",
+        "pass": "pass",
+        "fullTitle": "first suite some test",
+        "duration": 0,
+        "currentRetry": 0,
+        "err": {}
+      },
+      {
+        "title": "some other test",
+        "pass": "fail",
+        "fullTitle": "first suite some other test",
+        "duration": 0,
+        "currentRetry": 0,
+        "err": {
+          "message": "expected { tick: 42 } to deeply equal 5",
+          "showDiff": true,
+          "actual": {
+            "tick": 42
+          },
+          "expected": 5,
+          "stack": "AssertionError: expected { tick: 42 } to deeply equal 5\n    at Context.it (sample.js:10:31)"
+        }
+      },
+      {
+        "title": "some PENDING test",
+        "pass": "pending",
+        "fullTitle": "first suite some PENDING test",
+        "currentRetry": 0,
+        "err": {}
+      }
+    ],
+    "pending": [
+      {
+        "title": "some PENDING test",
+        "fullTitle": "first suite some PENDING test",
+        "currentRetry": 0,
+        "err": {}
+      }
+    ],
+    "failures": [
+      {
+        "title": "some other test",
+        "fullTitle": "first suite some other test",
+        "duration": 0,
+        "currentRetry": 0,
+        "err": {
+          "message": "expected { tick: 42 } to deeply equal 5",
+          "showDiff": true,
+          "actual": {
+            "tick": 42
+          },
+          "expected": 5,
+          "stack": "AssertionError: expected { tick: 42 } to deeply equal 5\n    at Context.it (sample.js:10:31)"
+        }
+      }
+    ],
+    "passes": [
+      {
+        "title": "some test",
+        "fullTitle": "first suite some test",
+        "duration": 0,
+        "currentRetry": 0,
+        "err": {}
+      }
+    ]
+  }

@@ -1,0 +1,51 @@
+include ./test-views/fail-test.pug
+include ./test-views/pending-test.pug
+include ./test-views/success-test.pug
+
+<!DOCTYPE html>
+html(lang="en")
+head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    link(rel="stylesheet" type="text/css" href="./node_modules/mocha/mocha.css")
+    title 
+        | GD Testing Framework
+    script(src='./node_modules/jquery/dist/jquery.min.js')
+    script(src='./myScript.js')
+body
+    div#mocha
+        ul#mocha-stats
+            li.allTests
+                a(href='javascript:void(0);')
+                    | all tests:
+                em
+                    | #{stats.tests}
+            li.passes
+                a(href='javascript:void(0);')
+                    | passes:
+                em
+                    | #{stats.passes}
+            li.failures
+                a(href='javascript:void(0);')
+                    | failures:
+                em
+                    | #{stats.failures}
+            li.duration
+                em
+                    | duration
+                    | #{stats.duration}
+                    | ms
+        ul#mocha-report
+            li.suite
+                h1
+                    a(href='#')
+                        | AGM
+                ul
+                    each test in tests
+                        if test.pass === 'fail'
+                            +fail(test)
+                        else if test.pass === 'pass'
+                            +success(test)
+                        else if test.pass === 'pending'
+                            +pending(test)

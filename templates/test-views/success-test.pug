@@ -1,0 +1,8 @@
+mixin success(test)
+    li(class=['test', 'pass'])
+        h2
+            | #{test.fullTitle}
+            span.duration
+                | #{test.duration}ms
+            a(href='#', class='replay')
+                | ‣
